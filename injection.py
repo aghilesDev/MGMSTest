@@ -1,10 +1,6 @@
 from dependency_injector import containers, providers
-from PyQt5 import QtSerialPort
 from setup import config
-
 from PyQt5.QtCore import QThreadPool
-
-
 from ViewLayer.MainView.mainUI import MainUI
 from LogicLayer.utils.receptionHandler import ReceptionHandler
 from LogicLayer.utils.pendingCommands import PendingCommands, send_signal
