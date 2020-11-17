@@ -1,13 +1,13 @@
 from dependency_injector import containers, providers
 from setup import config
 from PyQt5.QtCore import QThreadPool
-from ViewLayer.MainView.mainUI import MainUI
-from LogicLayer.utils.receptionHandler import ReceptionHandler
-from LogicLayer.utils.pendingCommands import PendingCommands, send_signal
-from LogicLayer.sendFrame.sendFrameTask import SendFrameTask
-from ControllerLayer.controllerRepository import ControllerRepository
-from ViewLayer.uiRepository import UIRepository
-from LogicLayer.MThread import MThread
+from View.MainView.mainUI import MainUI
+from Logic.utils.receptionHandler import ReceptionHandler
+from Logic.utils.pendingCommands import PendingCommands, send_signal
+from Logic.sendFrame.sendFrameTask import SendFrameTask
+from Controller.controllerRepository import ControllerRepository
+from View.uiRepository import UIRepository
+from Logic.MThread import MThread
 
 
 class Container(containers.DeclarativeContainer):

@@ -1,0 +1,5 @@
+{
+  "MAIN_UI_PATH": "View/MainView/main.ui",
+  "BAUD_RATE": 115200,
+  "SERIAL_PATH": "/dev/pts/2"
+}

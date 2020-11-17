@@ -1,4 +1,5 @@
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot, QIODevice, QTimer
+from Controller.mappers import map_baud_rate
 from PyQt5 import QtSerialPort
 
 
@@ -12,7 +13,8 @@ class ControllerRepositorySignal(QObject):
 class ControllerRepository(QObject):
     def __init__(self, serial_path, baud_rate: QtSerialPort.QSerialPort.BaudRate):
         super(ControllerRepository, self).__init__()
-        self.serial = QtSerialPort.QSerialPort(serial_path, baudRate=baud_rate, readyRead=self.on_data_read)
+        baud = map_baud_rate(baud_rate)
+        self.serial = QtSerialPort.QSerialPort(serial_path, baudRate=baud, readyRead=self.on_data_read)
         self.signals = ControllerRepositorySignal()
         self.serial.errorOccurred.connect(self.error)
         self.signals.write_data.connect(self.on_write_data)
